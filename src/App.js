@@ -1,11 +1,29 @@
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+import { connect } from 'react-redux';
 
-function App() {
+import Home from "./pages/Home";
+
+const App = ({ checked }) => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  );
+    <Router>
+      {
+        checked && (
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        )
+      }
+
+    </Router>
+  )
 }
 
-export default App;
+const mapStateToProps = ({ session }) => ({
+  checked: session.checked
+});
+
+export default connect(mapStateToProps)(App);
