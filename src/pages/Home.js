@@ -1,8 +1,13 @@
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Body from "../components/Body";
 
-const Home = ()=>{
+const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
+        <div className="home__container">
+            <Header />
+            <Body />
+            <Footer />
         </div>
     )
 }
