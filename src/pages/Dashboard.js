@@ -6,8 +6,9 @@ import { logoutUser } from "../auth/actions/userActions";
 
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import Footer from '../components/Footer';
 
-const Dashboard = ({logoutUser, user}) => {
+const Dashboard = ({ logoutUser, user }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -19,16 +20,22 @@ const Dashboard = ({logoutUser, user}) => {
         setSidebarOpen(false);
     }
 
-    return(
+    return (
         <div className="container">
-            <Navbar openSidebar={openSidebar}/>
-            <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} logoultUser={logoutUser} user={user} navigate={navigate}/>
+            <Navbar openSidebar={openSidebar} />
+            <main>
+                <div style={{height:'100vh'}}>
+                    <h1>Dashboard</h1>
+                </div>
+                <Footer />
+            </main>
+            <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} logoultUser={logoutUser} user={user} navigate={navigate} />
         </div>
     )
 }
 
-const mapStateToProps = ({session}) => ({
+const mapStateToProps = ({ session }) => ({
     user: session.user
 });
 
-export default connect(mapStateToProps, {logoutUser})(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);

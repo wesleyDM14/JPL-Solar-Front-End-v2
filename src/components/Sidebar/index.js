@@ -46,7 +46,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar, logoultUser, navigate }) => {
                     <IconContainer>
                         <FaPowerOff />
                     </IconContainer>
-                    <Logoult>Logoult</Logoult>
+                    <Logoult>Logout</Logoult>
                 </LogoultContainer>
             </MenuContainer>
         </div>
