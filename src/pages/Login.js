@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 
 const Login = () => {
     return (
-        <div className="container">
+        <div className="loginContainer">
             <LoginForm />
             <Footer />
         </div>

@@ -28,3 +28,11 @@ export const loginUser = (credentials, navigate, setFieldError, setSubmitting) =
         }
     }).catch(err => console.error(err));
 }
+
+export const logoutUser = (navigate) => {
+    return () => {
+        sessionService.deleteSession();
+        sessionService.deleteUser();
+        navigate('/');
+    }
+}
