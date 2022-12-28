@@ -10,7 +10,7 @@ const Header = () => {
         <Container>
             <Logo />
             <MenuContainer>
-                <LoginButton>Login</LoginButton>
+                <LoginButton to={'/login'}>Login</LoginButton>
             </MenuContainer>
         </Container>
     )
