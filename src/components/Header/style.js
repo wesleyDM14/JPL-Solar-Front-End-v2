@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import LogoImg from '../../assets/logo.png';
-import { colors } from "../cores";
+import { colors } from "../globalStyles.js";
 
 export const Container = styled.div`
     top: 0;

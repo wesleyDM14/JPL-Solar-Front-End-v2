@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colors } from "../cores";
+import { colors } from "../globalStyles";
 
 export const Container = styled.footer`
     margin-top: auto;

@@ -16,8 +16,8 @@ const Navbar = ({openSidebar}) => {
                 <FaBars />
             </NavbarShowIcon>
             <LeftContainer>
-                <NavbarIten>Dashboard</NavbarIten>
-                <NavbarIten>Clientes</NavbarIten>
+                <NavbarIten to={'/dashboard'}>Dashboard</NavbarIten>
+                <NavbarIten to={'/clients'}>Clientes</NavbarIten>
             </LeftContainer>
             <RightContainer>
                 <NavbarAvatar image={logo}/>

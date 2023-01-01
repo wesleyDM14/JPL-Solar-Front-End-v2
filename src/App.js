@@ -11,6 +11,7 @@ import BasicRoute from "./components/BasicRoute";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Clients from "./pages/Clients";
 
 const App = ({ checked }) => {
   return (
@@ -21,6 +22,7 @@ const App = ({ checked }) => {
             <Route path="/" element={<BasicRoute><Home /></BasicRoute>} />
             <Route path="/login" element={<BasicRoute><Login /></BasicRoute>}/>
             <Route path="/dashboard" element={<AuthRoute><Dashboard /></AuthRoute>}/>
+            <Route path="/clients" element={<AuthRoute><Clients /></AuthRoute>}/>
           </Routes>
         )
       }

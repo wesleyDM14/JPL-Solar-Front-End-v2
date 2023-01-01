@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { colors } from "../cores";
+import { colors } from "../globalStyles";
 
 export const NavbarContainer = styled.div`
     background: ${colors.primary};

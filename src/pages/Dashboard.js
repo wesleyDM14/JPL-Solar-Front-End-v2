@@ -1,41 +1,10 @@
-import { useState } from "react";
+import Template from "./Template";
+import Panel from "../components/Panel";
 
-import { connect } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { logoutUser } from "../auth/actions/userActions";
-
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from '../components/Footer';
-
-const Dashboard = ({ logoutUser, user }) => {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const navigate = useNavigate();
-
-    const openSidebar = () => {
-        setSidebarOpen(true);
-    }
-
-    const closeSidebar = () => {
-        setSidebarOpen(false);
-    }
-
+const Dashboard = () => {
     return (
-        <div className="container">
-            <Navbar openSidebar={openSidebar} />
-            <main>
-                <div style={{height:'100vh'}}>
-                    <h1>Dashboard</h1>
-                </div>
-                <Footer />
-            </main>
-            <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} logoultUser={logoutUser} user={user} navigate={navigate} />
-        </div>
+        <Template Component={Panel}/>
     )
 }
 
-const mapStateToProps = ({ session }) => ({
-    user: session.user
-});
-
-export default connect(mapStateToProps, { logoutUser })(Dashboard);
+export default Dashboard;

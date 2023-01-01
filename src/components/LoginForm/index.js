@@ -17,7 +17,7 @@ import {
     StyledFormButton,
 } from './style.js';
 import { TextInput } from '../FormLib';
-import { colors } from '../cores.js';
+import { colors } from '../globalStyles.js';
 import logo from '../../assets/logo.png';
 
 const LoginForm = ({ loginUser }) => {
