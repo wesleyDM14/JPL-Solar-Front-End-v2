@@ -23,20 +23,23 @@ import {
     StyledFormArea,
     StyledTitle,
     ButtonGroup,
-    StyledFormButton
+    StyledFormButton,
+    IconContactContaier,
+    ClientContactContainer
 } from './style.js';
 import {
     FaEdit,
     FaTrash,
     FaUser,
     FaPhone,
-    FaGlobe
+    FaGlobe,
+    FaWhatsapp
 } from 'react-icons/fa';
 import { ThreeDots } from "react-loader-spinner";
 import { colors, modalStyles } from "../globalStyles";
 import { useState } from 'react';
 
-const ClientList = ({ clients, user, setLoading }) => {
+const ClientList = ({ clients, user, setLoading, navigate }) => {
 
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
     const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
@@ -63,16 +66,23 @@ const ClientList = ({ clients, user, setLoading }) => {
         <ClientListContainer>
             <ClientListHeader>
                 <ListLabel>Nome</ListLabel>
+                <ListLabel>Contato</ListLabel>
                 <ListLabel>Cidade</ListLabel>
             </ClientListHeader>
             {
                 clients.map((client) => (
                     <SingleClient key={client.id}>
-                        <ClientSingleContainer>
+                        <ClientSingleContainer onClick={() => navigate(`/clients/client/${client.id}/solar-plants`)}>
                             <StyledLabel>Cliente: </StyledLabel>
                             <ClientValue>{client.name}</ClientValue>
                         </ClientSingleContainer>
-                        <ClientSingleContainer>
+                        <ClientContactContainer>
+                            <IconContactContaier href={`https://whatsa.me/55${client.contact}`} target='_blank'>
+                                <FaWhatsapp />
+                            </IconContactContaier>
+                            <ClientValue>{client.contact}</ClientValue>
+                        </ClientContactContainer>
+                        <ClientSingleContainer onClick={() => navigate(`/clients/client/${client.id}/solar-plants`)}>
                             <StyledLabel>Cidade: </StyledLabel>
                             <ClientValue>{client.address}</ClientValue>
                         </ClientSingleContainer>

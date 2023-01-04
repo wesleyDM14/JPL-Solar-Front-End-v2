@@ -94,7 +94,7 @@ export const ClientListContainer = styled.div`
 
 export const ClientListHeader = styled.div`
     display: grid;
-    grid-template-columns: 6fr 3fr 1fr;
+    grid-template-columns: 5fr 2fr 2fr 1fr;
     height: 40px;
     width: 100%;
     align-items: center;
@@ -112,7 +112,7 @@ export const ListLabel = styled.h5`
 
 export const SingleClient = styled.div`
     display: grid;
-    grid-template-columns: 6fr 3fr 1fr;
+    grid-template-columns: 5fr 2fr 2fr 1fr;
     height: 40px;
     width: 100%;
     align-items: center;
@@ -219,4 +219,16 @@ export const ConfirmButton = styled.button`
         cursor: pointer;
         background-color: black;
     }
+`;
+
+export const ClientContactContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`;
+
+export const IconContactContaier = styled.a`
+    font-size: 18px;
+    color: ${colors.lightblue};
+    margin-right: 10px;
 `;

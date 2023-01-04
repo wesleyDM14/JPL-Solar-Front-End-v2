@@ -25,7 +25,7 @@ const Template = ({ logoutUser, user, Component }) => {
             <Navbar openSidebar={openSidebar} />
             <main>
                 <div style={{height:'100vh'}}>
-                    {<Component user={user}/>}
+                    {<Component user={user} navigate={navigate}/>}
                 </div>
                 <Footer />
             </main>

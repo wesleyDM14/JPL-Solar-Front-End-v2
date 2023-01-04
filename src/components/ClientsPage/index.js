@@ -35,7 +35,7 @@ import { modalStyles, colors } from "../globalStyles";
 
 import ClientList from "./clientList";
 
-const ClientsPage = ({ user }) => {
+const ClientsPage = ({ user, navigate }) => {
 
     Modal.setAppElement(document.getElementById('root'));
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -160,7 +160,7 @@ const ClientsPage = ({ user }) => {
                         />
                     </LoadingContainer>
                 ) : (
-                    <ClientList clients={clients} user={user} setLoading={setLoading}/>
+                    <ClientList clients={clients} user={user} setLoading={setLoading} navigate={navigate}/>
                 )
             }
         </ClientsContainer>

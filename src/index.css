@@ -102,8 +102,24 @@ body {
   height: calc(100vh - 40px);
 }
 
-main{
+main {
   background: #f3f4f6;
   grid-area: main;
   overflow-y: auto;
+}
+
+.react-datepicker__input-container>input {
+  padding: 15px;
+  padding-left: 50px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  width: 350px;
+  color: #1F2937;
+  background-color: #E5E7EB;
+  text-decoration: none;
+  text-align: left;
+  transition: ease-in-out 0.3s;
+  outline: 0;
+  border-radius: 5px;
+  margin: 5px auto 15px auto;
 }

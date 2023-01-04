@@ -12,7 +12,7 @@ export const StyledLabel = styled.p`
 `;
 
 export const StyledTextInput = styled.input`
-   width: ${(props) => props.width}px;
+    width: ${(props) => props.width}px;
     padding: 15px;
     padding-left: 50px;
     font-size: 17px;
@@ -48,4 +48,24 @@ export const StyledIcon = styled.p`
     top: 35px;
     ${(props) => props.right && `right: 15px;`};
     ${(props) => !props.right && `left: 15px;`};
+`;
+
+export const StyledSelect = styled.select`
+    width: 100%;
+    padding: 15px;
+    padding-left: 50px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #1F2937;
+    background-color: #E5E7EB;
+    text-decoration: none;
+    text-align: left;
+    transition: ease-in-out 0.3s;
+    outline: 0;
+    border-radius: 5px;
+    margin: 5px auto 25px auto;
+`;
+
+export const StyledSelectContainer = styled.div`
+    position: relative;
 `;

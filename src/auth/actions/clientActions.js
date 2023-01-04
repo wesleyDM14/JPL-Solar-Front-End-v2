@@ -35,7 +35,6 @@ export const registerClient = async (client, setFieldError, setSubmitting, close
             closeModal();
         }
     }).catch(err => console.error(err));
-    return;
 }
 
 export const deleteClientById = async (user, client, setLoading) => {
