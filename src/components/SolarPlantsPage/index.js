@@ -20,7 +20,8 @@ import {
     StyledFormArea,
     StyledTitle,
     StyledFormButton,
-    ButtonGroup
+    ButtonGroup,
+    LoadingContainer
 } from './style.js';
 import {
     FaSolarPanel,
@@ -36,8 +37,9 @@ import {
 } from 'react-icons/fa';
 import { ThreeDots } from "react-loader-spinner";
 import { modalStyles, colors } from "../globalStyles";
+import SolarPlantsList from "./solarPlantList.js";
 
-const SolarPlantsPage = () => {
+const SolarPlantsPage = ({navigate}) => {
 
     Modal.setAppElement(document.getElementById('root'));
     const { id } = useParams();
@@ -240,6 +242,19 @@ const SolarPlantsPage = () => {
                     </Modal>
                 </RegisterContainer>
             </SolarPlantsHeader>
+            {
+                loading ? (
+                    <LoadingContainer>
+                        <ThreeDots 
+                            color={colors.dark3}
+                            height={80}
+                            width={350}
+                        />
+                    </LoadingContainer>
+                ) : (
+                    <SolarPlantsList solarPlants={solarPlants} clientId={id} setLoading={setLoading} navigate={navigate}/>
+                )
+            }
         </SolarPlantsContainer>
     )
 }

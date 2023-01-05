@@ -86,3 +86,138 @@ export const StyledFormButton = styled.button`
         cursor: pointer;
     }
 `;
+
+export const LoadingContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+`;
+
+export const SolarPlantsCards = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+`;
+
+export const SingleSolarPlant = styled.div`
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #fff;
+    cursor: pointer;
+    align-items: center;
+`;
+
+export const IconSolarPlantContainer = styled.div`
+    font-size: 80px;
+    align-self: center;
+    color: #2e4a66;
+`;
+
+export const SolarPlantsInfo = styled.div`
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const InfoTitle = styled.h2`
+    margin-top: 10px;
+    font-size: 18px;
+    color: #2e4a66;
+`;
+
+export const InfoValue = styled.span`
+    font-size: 14px;
+    font-weight: 700;
+    color: #272736;
+`;
+
+export const SolarPlantsOperations = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const IconOperation = styled.div`
+    color: yellow;
+    margin-bottom: 25px;
+    font-size: 30px;
+`;
+
+export const SolarPlantsAdmin = styled.div`
+    display: inline-flex;
+    margin: 20px 0;
+`;
+
+export const IconEdit = styled.div`
+    margin-left: 8px;
+    font-size: 20px;
+    color: lightblue;
+`;
+
+export const IconDelete = styled.div`
+    margin-left: 8px;
+    font-size: 20px;
+    color: red;
+`;
+
+export const DeleteContainer = styled.div`
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+`;
+
+export const DeleteTitle = styled.h1`
+    font-size: 20px;
+    color: #2e4a66;
+`;
+
+export const DeleteButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+`;
+
+export const CancelButton = styled.button`
+    padding: 10px;
+    width: 100px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    transition: ease-in-out 0.3s;
+    outline: 0;
+
+    &:hover{
+        cursor: pointer;
+        background-color: black;
+    }
+`;
+
+export const ConfirmButton = styled.button`
+    padding: 10px;
+    width: 100px;
+    background-color: lightgreen;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 0;
+    border-radius: 15px;
+    transition: ease-in-out 0.3s;
+    outline: 0;
+
+    &:hover{
+        cursor: pointer;
+        background-color: black;
+    }
+`;
