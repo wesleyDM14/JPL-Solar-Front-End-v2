@@ -55,7 +55,9 @@ body {
 .text-green {
   color: #3b9668;
 }
-
+.home_container {
+  height: 100vh;
+}
 .container {
   display: grid;
   height: 100vh;

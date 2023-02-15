@@ -29,7 +29,7 @@ export const getSolarPlantsByClientId = async ({ id, setSolarPlants, setLoading 
             'Content-Type': 'application/json'
         }
     }
-    ).then((response)=>{
+    ).then((response) => {
         const data = response.data;
         setSolarPlants(data.data);
         setLoading(false);
@@ -41,13 +41,13 @@ export const updateSolarPlant = async (solarPlant, setFieldError, setSubmitting,
         headers: {
             "Content-Type": "application/json"
         }
-    }).then((response)=>{
-        const {data} = response;
+    }).then((response) => {
+        const { data } = response;
         if (data.status === 'FAILED') {
             const { message } = data;
             setFieldError('login', message);
             setSubmitting(false);
-        }else if (data.status === 'SUCESS') {
+        } else if (data.status === 'SUCESS') {
             setSubmitting(false);
             setLoading(true);
             closeModal();
@@ -70,4 +70,33 @@ export const deletePlantById = async (solarPlant, setLoading) => {
     ).then(() => {
         setLoading(true);
     }).catch(err => console.error(err));
+}
+
+export const getPlantById = async ({ id, setPlant, setLoading }) => {
+    if (id === undefined) {
+        return;
+    } else {
+        await axios.get(`http://localhost:3333/api/clients/plants/plant/${id}`, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(async (response) => {
+            let plant = response.data.data;
+            await axios.post(`http://localhost:3333/api/growatt/status`, {
+                data: {
+                    user: plant.login,
+                    password: plant.password,
+                }
+            }
+                , {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            ).then((response) => {
+                setPlant(response.data);
+                setLoading(false);
+            }).catch(err => console.error(err));
+        }).catch(err => console.error(err));
+    }
 }

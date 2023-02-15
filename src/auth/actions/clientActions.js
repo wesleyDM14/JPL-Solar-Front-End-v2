@@ -16,6 +16,20 @@ export const getClientsByUserLogedIn = async ({ user, setLoading }) => {
     return clients;
 }
 
+export const getClientById = async ({clientId, setClient}) => {
+    let client = {}
+    await axios.get(`http://localhost:3333/api/clients/client/${clientId}`, {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    ).then((response) => {
+        const data = response.data.data;
+        client = data;
+    }).catch(err => console.error(err));
+    setClient(client);
+}
+
 export const registerClient = async (client, setFieldError, setSubmitting, closeModal, setLoading) => {
     await axios.post('http://localhost:3333/api/clients/register', client,
         {

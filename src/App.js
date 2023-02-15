@@ -12,7 +12,10 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
+import AdminArea from "./pages/AdminArea";
+import Profile from "./pages/Profile";
 import SolarPlants from "./pages/SolarPlants";
+import SolarPlantDetail from "./pages/SolarPlantDetail";
 
 const App = ({ checked }) => {
   return (
@@ -23,8 +26,11 @@ const App = ({ checked }) => {
             <Route path="/" element={<BasicRoute><Home /></BasicRoute>} />
             <Route path="/login" element={<BasicRoute><Login /></BasicRoute>}/>
             <Route path="/dashboard" element={<AuthRoute><Dashboard /></AuthRoute>}/>
+            <Route path="/admin-area" element={<AuthRoute><AdminArea /></AuthRoute>} />
+            <Route path="/profile" element={<AuthRoute><Profile /></AuthRoute>} />
             <Route path="/clients" element={<AuthRoute><Clients /></AuthRoute>}/>
             <Route path="/clients/client/:id/solar-plants" element={<AuthRoute><SolarPlants /></AuthRoute>}/>
+            <Route path="/clients/client/:clientId/solar-plant/:id" element={<AuthRoute><SolarPlantDetail /></AuthRoute>}/>
           </Routes>
         )
       }

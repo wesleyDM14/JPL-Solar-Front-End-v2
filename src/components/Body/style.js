@@ -6,7 +6,8 @@ export const Container = styled.div`
     margin-top: 80px;
     background-color: ${colors.primary};
     display: grid;
-    grid-template-columns: 0.6fr 0.4fr;
+    grid-template-columns: 6fr 4fr;
+    height: 100vh;
 
     @media only screen and (max-width: 768px){
         display: flex;
@@ -36,7 +37,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: 43px;
+    font-size: 60px;
     text-align: center;
     color: ${colors.theme};
     padding: 5px;

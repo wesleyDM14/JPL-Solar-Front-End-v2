@@ -80,10 +80,10 @@ const SolarPlantsList = ({ solarPlants, clientId, setLoading, navigate }) => {
             {
                 solarPlants.map((plant) => (
                     <SingleSolarPlant key={plant.id}>
-                        <IconSolarPlantContainer>
+                        <IconSolarPlantContainer onClick={() => navigate(`/clients/client/${clientId}/solar-plant/${plant.id}`)}>
                             <FaSolarPanel />
                         </IconSolarPlantContainer>
-                        <SolarPlantsInfo>
+                        <SolarPlantsInfo onClick={() => navigate(`/clients/client/${clientId}/solar-plant/${plant.id}`)}>
                             <InfoTitle>Localização: </InfoTitle>
                             <InfoValue>{plant.local}</InfoValue>
                             <InfoTitle>Potência Instalada: </InfoTitle>

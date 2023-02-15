@@ -100,6 +100,10 @@ export const SolarPlantsCards = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+
+    @media only screen and (min-width: 1920px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `;
 
 export const SingleSolarPlant = styled.div`

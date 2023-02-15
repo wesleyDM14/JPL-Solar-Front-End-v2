@@ -135,10 +135,12 @@ export const StyledLabel = styled.h1`
     margin-right: 10px;
 `;
 
-export const ClientValue = styled.p`
+export const ClientValue = styled.a`
     font-size: 14px;
     font-weight: 700;
     margin-right: 30px;
+    text-decoration: none;
+    color: ${colors.dark1};
 `;
 
 export const AdminClientContainer = styled.div`

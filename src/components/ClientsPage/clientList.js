@@ -80,7 +80,7 @@ const ClientList = ({ clients, user, setLoading, navigate }) => {
                             <IconContactContaier href={`https://whatsa.me/55${client.contact}`} target='_blank'>
                                 <FaWhatsapp />
                             </IconContactContaier>
-                            <ClientValue>{client.contact}</ClientValue>
+                            <ClientValue href={`https://whatsa.me/55${client.contact}`} target='_blank'>{client.contact}</ClientValue>
                         </ClientContactContainer>
                         <ClientSingleContainer onClick={() => navigate(`/clients/client/${client.id}/solar-plants`)}>
                             <StyledLabel>Cidade: </StyledLabel>

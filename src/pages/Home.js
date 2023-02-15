@@ -4,7 +4,7 @@ import Body from "../components/Body";
 
 const Home = () => {
     return (
-        <div className="container">
+        <div className="home_container">
             <Header />
             <Body />
             <Footer />

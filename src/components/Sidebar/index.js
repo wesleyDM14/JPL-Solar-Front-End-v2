@@ -29,14 +29,14 @@ const Sidebar = ({ sidebarOpen, closeSidebar, logoultUser, navigate }) => {
             </TitleContainer>
             <MenuContainer>
                 <MenuTitleSection>ADMIN</MenuTitleSection>
-                <MenuItemContainer>
+                <MenuItemContainer onClick={() => navigate('/admin-area')}>
                     <IconContainer>
                         <FaTachometerAlt />
                     </IconContainer>
                     <MenuItemTitle>Área Administrativa</MenuItemTitle>
                 </MenuItemContainer>
                 <MenuTitleSection>PESSOAL</MenuTitleSection>
-                <MenuItemContainer>
+                <MenuItemContainer onClick={() => navigate('/profile')}>
                     <IconContainer>
                         <FaUser />
                     </IconContainer>
