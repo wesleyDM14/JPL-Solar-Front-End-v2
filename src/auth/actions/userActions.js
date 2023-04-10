@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { sessionService } from 'redux-react-session';
+import { BASE_URL } from './baseurl';
 
 export const loginUser = (credentials, navigate, setFieldError, setSubmitting) => {
-    axios.post('http://localhost:3333/api/auth/login', credentials,
+    axios.post(BASE_URL+'api/auth/login', credentials,
         {
             headers: {
                 'Content-Type': 'application/json'
@@ -15,6 +16,7 @@ export const loginUser = (credentials, navigate, setFieldError, setSubmitting) =
             if (message.includes('Incorrect') || message.includes('Please')) {
                 setFieldError('login', message);
                 setFieldError('password', message);
+                setSubmitting(false);
             }
         }else if(data.status === 'SUCESS') {
             const userData = data.data;

@@ -33,7 +33,9 @@ import {
     FaUser,
     FaPhone,
     FaGlobe,
-    FaWhatsapp
+    FaWhatsapp,
+    FaAngleUp,
+    FaAngleDown
 } from 'react-icons/fa';
 import { ThreeDots } from "react-loader-spinner";
 import { colors, modalStyles } from "../globalStyles";
@@ -45,6 +47,8 @@ const ClientList = ({ clients, user, setLoading, navigate }) => {
     const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
     const [modalUpdateIsOpen, setModalUpdateIsOpen] = useState(false);
     const [selectedClient, setSelectedClient] = useState({});
+    const [nameUp, setNameUp] = useState(true);
+    const [cityUp, setCityUp] = useState(true);
 
     const openDeleteModal = () => {
         setModalDeleteIsOpen(true);
@@ -65,9 +69,39 @@ const ClientList = ({ clients, user, setLoading, navigate }) => {
     return (
         <ClientListContainer>
             <ClientListHeader>
-                <ListLabel>Nome</ListLabel>
+                <ListLabel>Nome
+                    <div
+                        style={{ display: 'inline-block', cursor: 'pointer' }}
+                        onClick={
+                            () => {
+                                setNameUp(!nameUp);
+                                if (nameUp) {
+                                    clients = clients.sort((a, b) => (a.name > b.name) ? 1 : (b.name > a.name) ? -1 : 0);
+                                } else {
+                                    clients = clients.sort((a, b) => (a.name < b.name) ? 1 : (b.name < a.name) ? -1 : 0);
+                                }
+                            }
+                        }
+                    >{nameUp ? <FaAngleUp /> : <FaAngleDown />}
+                    </div>
+                </ListLabel>
                 <ListLabel>Contato</ListLabel>
-                <ListLabel>Cidade</ListLabel>
+                <ListLabel>Cidade
+                    <div
+                        style={{ display: 'inline-block', cursor: 'pointer' }}
+                        onClick={
+                            () => {
+                                setCityUp(!cityUp);
+                                if (cityUp) {
+                                    clients = clients.sort((a, b) => (a.address > b.address) ? 1 : (b.address > a.address) ? -1 : 0);
+                                } else {
+                                    clients = clients.sort((a, b) => (a.address < b.address) ? 1 : (b.address < a.address) ? -1 : 0);
+                                }
+                            }
+                        }
+                    >{cityUp ? <FaAngleUp /> : <FaAngleDown />}
+                    </div>
+                </ListLabel>
             </ClientListHeader>
             {
                 clients.map((client) => (

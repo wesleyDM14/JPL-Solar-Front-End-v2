@@ -55,9 +55,11 @@ body {
 .text-green {
   color: #3b9668;
 }
+
 .home_container {
   height: 100vh;
 }
+
 .container {
   display: grid;
   height: 100vh;
@@ -79,7 +81,18 @@ body {
   #sidebar {
     display: none;
   }
+
+  .mainContainer {
+    min-height: 200vh;
+  }
 }
+
+@media only screen and (min-width: 1920px) {
+  .mainContainer {
+    min-height: 100vh;
+  }
+}
+
 
 .loginContainer {
   min-height: 100vh;
@@ -108,6 +121,10 @@ main {
   background: #f3f4f6;
   grid-area: main;
   overflow-y: auto;
+}
+
+.mainContainer {
+  margin-bottom: 5%;
 }
 
 .react-datepicker__input-container>input {

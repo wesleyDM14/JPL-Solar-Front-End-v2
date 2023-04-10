@@ -16,6 +16,7 @@ import AdminArea from "./pages/AdminArea";
 import Profile from "./pages/Profile";
 import SolarPlants from "./pages/SolarPlants";
 import SolarPlantDetail from "./pages/SolarPlantDetail";
+import Download from "./pages/Download";
 
 const App = ({ checked }) => {
   return (
@@ -31,6 +32,7 @@ const App = ({ checked }) => {
             <Route path="/clients" element={<AuthRoute><Clients /></AuthRoute>}/>
             <Route path="/clients/client/:id/solar-plants" element={<AuthRoute><SolarPlants /></AuthRoute>}/>
             <Route path="/clients/client/:clientId/solar-plant/:id" element={<AuthRoute><SolarPlantDetail /></AuthRoute>}/>
+            <Route path="/downloadPdf/:clientId/:id/:url" element={<AuthRoute><Download /></AuthRoute>} />
           </Routes>
         )
       }

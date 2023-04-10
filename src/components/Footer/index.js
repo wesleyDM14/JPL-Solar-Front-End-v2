@@ -6,7 +6,7 @@ import {
 const Footer = () => {
     return (
         <Container>
-            <CopyrightText>&copy; Todos os direitos resevados - 2022</CopyrightText>
+            <CopyrightText>&copy; Todos os direitos resevados - {new Date().getFullYear()}</CopyrightText>
         </Container>
     )
 }

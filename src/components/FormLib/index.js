@@ -89,12 +89,16 @@ export const SelectInput = ({ icon, handleChange, initialValue, ...props }) => {
             value: 'solis',
         },
         {
-            label: 'Dye',
-            value: 'dye',
+            label: 'Deye',
+            value: 'deye',
         },
         {
             label: 'Refusol',
             value: 'refusol',
+        },
+        {
+            label: 'Fronius',
+            value: 'fronius'
         },
     ]
 
