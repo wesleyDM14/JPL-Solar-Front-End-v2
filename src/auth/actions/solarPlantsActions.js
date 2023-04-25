@@ -202,13 +202,12 @@ export const getAllSolarPlant = async ({ setPlantsLoading, setSolarPlants, setSo
         var solarPlants = await getAllPlantForClient(clients[i].id);
         for (let j = 0; j < solarPlants.length; j++) {
             let plantTemp = solarPlants[j];
-            
             await axios.get(BASE_URL + `api/clients/plants/dashboard/solarPlants/status/${encodeURIComponent(solarPlants[j].login)}/${encodeURIComponent(solarPlants[j].password)}/${solarPlants[j].inverter}/${clients[i].name}/${solarPlants[j].code}`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
             }
-            ).then((response) => {
+            ).then(async (response) => {
                 let temp = response.data;
                 temp.plantId = plantTemp.id;
                 temp.clientId = clients[i].id;

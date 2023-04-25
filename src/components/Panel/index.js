@@ -140,7 +140,7 @@ const Panel = ({ user, navigate }) => {
                                                 <CardPanelStatusError><FaExclamationTriangle /></CardPanelStatusError>
                                                 <CardPanelInner>
                                                     <CardPanelTitle>{element.codUsina}</CardPanelTitle>
-                                                    <CardPanelName>{element.clientName}</CardPanelName>
+                                                    <CardPanelName>{element.clientName.toLowerCase()}</CardPanelName>
                                                 </CardPanelInner>
                                                 <CardPanelProdution>
                                                     <CardPanelEnergy><FaBolt /></CardPanelEnergy>
