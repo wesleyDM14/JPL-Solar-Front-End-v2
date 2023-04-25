@@ -73,10 +73,6 @@ export const SelectInput = ({ icon, handleChange, initialValue, ...props }) => {
             value: 'abb',
         },
         {
-            label: 'Sungrow',
-            value: 'sungrow',
-        },
-        {
             label: 'Growatt',
             value: 'growatt',
         },
@@ -85,21 +81,9 @@ export const SelectInput = ({ icon, handleChange, initialValue, ...props }) => {
             value: 'canadian',
         },
         {
-            label: 'Solis',
-            value: 'solis',
-        },
-        {
             label: 'Deye',
             value: 'deye',
-        },
-        {
-            label: 'Refusol',
-            value: 'refusol',
-        },
-        {
-            label: 'Fronius',
-            value: 'fronius'
-        },
+        }
     ]
 
     return (

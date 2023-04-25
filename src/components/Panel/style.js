@@ -115,6 +115,9 @@ export const CardPanel = styled.div`
     background-color: #fff;
     box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #fff;
     cursor: pointer;
+    @media (max-width: 1380px) {
+     min-height: 80px;
+    }
 `;
 
 export const CardPanelStatusActive = styled.div`
@@ -148,6 +151,11 @@ export const CardPanelStatusActive = styled.div`
       filter: brightness(200%);
     }
   }
+
+  @media (max-width: 1380px) {
+    font-size: 25px;
+  }
+
 `;
 
 export const CardPanelStatusError = styled.div`
@@ -181,6 +189,9 @@ export const CardPanelStatusError = styled.div`
       filter: brightness(200%);
     }
   }
+  @media (max-width: 1380px) {
+    font-size: 25px;
+  }
 `;
 
 export const CardPanelInner = styled.div`
@@ -193,11 +204,17 @@ export const CardPanelInner = styled.div`
 export const CardPanelTitle = styled.h1`
     font-size: 24px;
     color: #2e4a66;
+    @media (max-width: 1380px) {
+      font-size: 16px;
+    }
 `;
 
 export const CardPanelName = styled.span`
     color: #a5aaad;
     font-size: 14px;
+    @media (max-width: 1380px) {
+      font-size: 12px;
+    }
 `;
 
 export const CardPanelProdution = styled.div`
@@ -210,9 +227,15 @@ export const CardPanelEnergy = styled.div`
     font-size: 25px;
     color: #00ff0066;
     text-align: center;
+    @media (max-width: 1380px) {
+      font-size: 20px;
+    }
 `;
 
 export const EnergyContent = styled.p`
     font-size: 16px;
     font-weight: bold;
+    @media (max-width: 1380px) {
+      font-size: 14px;
+    }
 `;

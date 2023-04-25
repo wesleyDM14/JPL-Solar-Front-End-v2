@@ -108,7 +108,7 @@ const ClientList = ({ clients, user, setLoading, navigate }) => {
                     <SingleClient key={client.id}>
                         <ClientSingleContainer onClick={() => navigate(`/clients/client/${client.id}/solar-plants`)}>
                             <StyledLabel>Cliente: </StyledLabel>
-                            <ClientValue>{client.name}</ClientValue>
+                            <ClientValue>{client.name.toLowerCase()}</ClientValue>
                         </ClientSingleContainer>
                         <ClientContactContainer>
                             <IconContactContaier href={`https://whatsa.me/55${client.contact}`} target='_blank'>
@@ -118,7 +118,7 @@ const ClientList = ({ clients, user, setLoading, navigate }) => {
                         </ClientContactContainer>
                         <ClientSingleContainer onClick={() => navigate(`/clients/client/${client.id}/solar-plants`)}>
                             <StyledLabel>Cidade: </StyledLabel>
-                            <ClientValue>{client.address}</ClientValue>
+                            <ClientValue className='city'>{client.address.toLowerCase()}</ClientValue>
                         </ClientSingleContainer>
                         <AdminClientContainer>
                             <EditIcon>

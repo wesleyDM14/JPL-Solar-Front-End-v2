@@ -142,3 +142,9 @@ main {
   border-radius: 5px;
   margin: 5px auto 15px auto;
 }
+
+@media (max-width: 1380px) {
+  .city {
+    font-size: 11px !important;
+  }
+}

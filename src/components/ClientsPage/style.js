@@ -99,7 +99,8 @@ export const ClientListHeader = styled.div`
     width: 100%;
     align-items: center;
     padding: 15px;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     background-color: ${colors.primary};
     box-shadow: 5px 5px 13px #EDEDED, -5px -5px 13px #FFF;
 `;
@@ -113,13 +114,11 @@ export const ListLabel = styled.h5`
 export const SingleClient = styled.div`
     display: grid;
     grid-template-columns: 5fr 2fr 2fr 1fr;
-    height: 40px;
+    height: 50px;
     width: 100%;
     align-items: center;
     padding: 15px;
-    border-radius: 5px;
     background-color: #fff;
-    box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #fff;
     cursor: pointer;
 `;
 
@@ -141,6 +140,10 @@ export const ClientValue = styled.a`
     margin-right: 30px;
     text-decoration: none;
     color: ${colors.dark1};
+
+    @media (max-width: 1380px) {
+        font-weight: 300;
+    }
 `;
 
 export const AdminClientContainer = styled.div`

@@ -3,7 +3,7 @@ import { BASE_URL } from "./baseurl";
 import { getAllClient, } from "./clientActions";
 
 export const registerSolarPlant = async (solarPlant, setFieldError, setSubmitting, closeModal, setLoading) => {
-    await axios.post(BASE_URL+"api/clients/plants/register", solarPlant,
+    await axios.post(BASE_URL + "api/clients/plants/register", solarPlant,
         {
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const registerSolarPlant = async (solarPlant, setFieldError, setSubmittin
 
 export const getSolarPlantsByClientId = async ({ id, setSolarPlants, setLoading }) => {
     let clientId = id;
-    await axios.get(BASE_URL+`api/clients/plants/plants/${clientId}`, {
+    await axios.get(BASE_URL + `api/clients/plants/plants/${clientId}`, {
         headers: {
             'Content-Type': 'application/json'
         }
@@ -39,7 +39,7 @@ export const getSolarPlantsByClientId = async ({ id, setSolarPlants, setLoading 
 }
 
 export const updateSolarPlant = async (solarPlant, setFieldError, setSubmitting, setLoading, closeModal) => {
-    await axios.put(BASE_URL+'api/clients/plants/update', solarPlant, {
+    await axios.put(BASE_URL + 'api/clients/plants/update', solarPlant, {
         headers: {
             "Content-Type": "application/json"
         }
@@ -58,7 +58,7 @@ export const updateSolarPlant = async (solarPlant, setFieldError, setSubmitting,
 }
 
 export const deletePlantById = async (solarPlant, setLoading) => {
-    await axios.post(BASE_URL+'api/clients/plants/delete',
+    await axios.post(BASE_URL + 'api/clients/plants/delete',
         {
             data: {
                 id: solarPlant.id,
@@ -78,14 +78,14 @@ export const getPlantById = async ({ id, setPlant, setLoading, setCurrentPlant }
     if (id === undefined) {
         return;
     } else {
-        await axios.get(BASE_URL+`api/clients/plants/plant/${id}`, {
+        await axios.get(BASE_URL + `api/clients/plants/plant/${id}`, {
             headers: {
                 "Content-Type": "application/json"
             }
         }).then(async (response) => {
             let plant = response.data.data;
             setCurrentPlant(plant);
-            await axios.get(BASE_URL+`api/clients/plants/params/${encodeURIComponent(plant.login)}/${encodeURIComponent(plant.password)}/${plant.inverter}`, {
+            await axios.get(BASE_URL + `api/clients/plants/params/${encodeURIComponent(plant.login)}/${encodeURIComponent(plant.password)}/${plant.inverter}`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -110,7 +110,7 @@ export const getSolarPlantChartByType = async ({ currentPlant, date, type, plant
         let temp = date.toISOString().slice(0, 10);
         date = temp;
     }
-    await axios.post(BASE_URL+'api/clients/plants/params/getChartByType',
+    await axios.post(BASE_URL + 'api/clients/plants/params/getChartByType',
         {
             data: {
                 login: currentPlant.login,
@@ -149,7 +149,7 @@ export const getSolarPlantChartByType = async ({ currentPlant, date, type, plant
 export const getErrorListSolarPlant = async ({ currentPlant, errorDate, plant, setErrorList, setErrorLoading }) => {
     let date = errorDate.getFullYear();
 
-    await axios.post(BASE_URL+'api/clients/plants/params/getErrorLogByYear',
+    await axios.post(BASE_URL + 'api/clients/plants/params/getErrorLogByYear',
         {
             data: {
                 login: currentPlant.login,
@@ -170,7 +170,7 @@ export const getErrorListSolarPlant = async ({ currentPlant, errorDate, plant, s
 }
 
 export const getTotalData = async ({ setLoading, setNumUsinas, setPowerInstaled }) => {
-    await axios.get(BASE_URL+'api/clients/plants/dashboardData', {
+    await axios.get(BASE_URL + 'api/clients/plants/dashboardData', {
         headers: {
             "Content-Type": "application/json"
         }
@@ -183,7 +183,7 @@ export const getTotalData = async ({ setLoading, setNumUsinas, setPowerInstaled 
 
 const getAllPlantForClient = async (clientId) => {
     let plants = [];
-    await axios.get(BASE_URL+`api/clients/plants/plants/${clientId}`, {
+    await axios.get(BASE_URL + `api/clients/plants/plants/${clientId}`, {
         headers: {
             'Content-Type': 'application/json'
         }
@@ -202,7 +202,8 @@ export const getAllSolarPlant = async ({ setPlantsLoading, setSolarPlants, setSo
         var solarPlants = await getAllPlantForClient(clients[i].id);
         for (let j = 0; j < solarPlants.length; j++) {
             let plantTemp = solarPlants[j];
-            await axios.get(BASE_URL+`api/clients/plants/dashboard/solarPlants/statUs/${encodeURIComponent(solarPlants[j].login)}/${encodeURIComponent(solarPlants[j].password)}/${solarPlants[j].inverter}/${clients[i].name}/${solarPlants[j].code}`, {
+            
+            await axios.get(BASE_URL + `api/clients/plants/dashboard/solarPlants/status/${encodeURIComponent(solarPlants[j].login)}/${encodeURIComponent(solarPlants[j].password)}/${solarPlants[j].inverter}/${clients[i].name}/${solarPlants[j].code}`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
