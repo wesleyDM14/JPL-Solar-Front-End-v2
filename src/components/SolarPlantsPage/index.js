@@ -199,8 +199,8 @@ const SolarPlantsPage = ({navigate}) => {
                                             <TextInput
                                                 name="estimatedGeneration"
                                                 type="number"
-                                                label="Media de Geração Anual (kWp)"
-                                                placeholder="Digite a média da geração Anual"
+                                                label="Media de Geração Mensal (kWh)"
+                                                placeholder="Digite a média da geração Mensal"
                                                 icon={<FaHashtag />}
                                                 width={350}
                                             />

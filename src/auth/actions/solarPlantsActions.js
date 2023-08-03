@@ -198,6 +198,34 @@ export const getAllSolarPlant = async ({ setPlantsLoading, setSolarPlants, setSo
     let plantsResponse = [];
     let plantsErrorResponse = [];
     let clients = await getAllClient();
+    let requestsUrl = [];
+
+    for (let i = 0; i < clients.length; i++) {
+        var solarPlants = await getAllPlantForClient(clients[i].id);
+        for (let j = 0; j < solarPlants.length; j++) {
+            requestsUrl.push(BASE_URL + `api/clients/plants/dashboard/solarPlants/status/${encodeURIComponent(solarPlants[j].login)}/${encodeURIComponent(solarPlants[j].password)}/${solarPlants[j].inverter}/${clients[i].name}/${solarPlants[j].code}/${clients[i].id}/${solarPlants[j].id}`);
+        }
+    }
+
+    const responses = await Promise.allSettled(
+        requestsUrl.map(async url => {
+            const res = await axios.get(url);
+            return res;
+        })
+    );
+
+    responses.map(response => {
+        if (response.value.data.status === '1') {
+            plantsResponse.push(response.value.data);
+        } else {
+            plantsErrorResponse.push(response.value.data);
+        }
+    });
+    
+    setSolarPlants(plantsResponse);
+    setSolarPlantsWithError(plantsErrorResponse);
+    setPlantsLoading(false);
+    /*
     for (let i = 0; i < clients.length; i++) {
         var solarPlants = await getAllPlantForClient(clients[i].id);
         for (let j = 0; j < solarPlants.length; j++) {
@@ -218,8 +246,8 @@ export const getAllSolarPlant = async ({ setPlantsLoading, setSolarPlants, setSo
                 }
             }).catch(err => console.error(err));
         }
-    }
-    setSolarPlants(plantsResponse);
+    }*/
+    /*setSolarPlants(plantsResponse);
     setSolarPlantsWithError(plantsErrorResponse);
-    setPlantsLoading(false);
+    setPlantsLoading(false);*/
 }
