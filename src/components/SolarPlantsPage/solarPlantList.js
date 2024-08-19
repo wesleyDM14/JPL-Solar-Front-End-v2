@@ -183,6 +183,7 @@ const SolarPlantsList = ({ solarPlants, clientId, setLoading, navigate }) => {
                                                             type="number"
                                                             label="Potência do inversor (kWp)"
                                                             placeholder="Digite a potência do inversor"
+                                                            onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                             icon={<FaBolt />}
                                                             width={350}
                                                         />
@@ -199,6 +200,7 @@ const SolarPlantsList = ({ solarPlants, clientId, setLoading, navigate }) => {
                                                             type="number"
                                                             label="Potência do Painel Solar (W)"
                                                             placeholder="Digite a potência do painel solar"
+                                                            onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                             icon={<FaBolt />}
                                                             width={350}
                                                         />
@@ -207,6 +209,7 @@ const SolarPlantsList = ({ solarPlants, clientId, setLoading, navigate }) => {
                                                             type="number"
                                                             label="Quantidade de Painéis Instalado"
                                                             placeholder="Digite a quantidade de paineis instalado"
+                                                            onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                             icon={<FaHashtag />}
                                                             width={350}
                                                         />
@@ -215,6 +218,7 @@ const SolarPlantsList = ({ solarPlants, clientId, setLoading, navigate }) => {
                                                             type="number"
                                                             label="Media de Geração Anual (kWp)"
                                                             placeholder="Digite a média da geração Anual"
+                                                            onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                             icon={<FaHashtag />}
                                                             width={350}
                                                         />

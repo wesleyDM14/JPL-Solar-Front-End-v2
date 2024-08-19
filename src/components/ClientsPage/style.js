@@ -210,7 +210,7 @@ export const CancelButton = styled.button`
 
 export const ConfirmButton = styled.button`
     padding: 10px;
-    width: 100px;
+    width: 150px;
     background-color: lightgreen;
     font-size: 16px;
     font-weight: 700;
@@ -219,6 +219,7 @@ export const ConfirmButton = styled.button`
     border-radius: 15px;
     transition: ease-in-out 0.3s;
     outline: 0;
+    margin-right: 15px;
 
     &:hover{
         cursor: pointer;

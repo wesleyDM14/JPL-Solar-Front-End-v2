@@ -128,7 +128,7 @@ const SolarPlantDetailPage = ({ navigate }) => {
                 await getPlantById({ id, setPlant, setLoading, setCurrentPlant });
             }
             if (dataLoading) {
-                if (plant !== {} && plant.deviceSN !== undefined) {
+                if (/*plant !== {} &&*/ plant.deviceSN !== undefined) {
                     if (plant.deviceSN.deviceTypeName === 'max') {
                         setPowerData(plant.chart.pac);
                     } else if (plant.deviceSN.deviceTypeName === 'tlx') {
@@ -166,6 +166,7 @@ const SolarPlantDetailPage = ({ navigate }) => {
                         />
                     </LoadingContainer>
                 ) : (
+
                     <SolarPlantDetailContainer>
                         <Header>
                             <Title>

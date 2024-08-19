@@ -148,3 +148,18 @@ main {
     font-size: 11px !important;
   }
 }
+
+.react-date-picker {
+  display: flex !important;
+  width: 90%;
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+}
+
+.react-date-picker__inputGroup {
+  padding-bottom: calc(.5em - 1px) !important;
+  padding-left: calc(.75em - 1px) !important;
+  padding-right: calc(.75em - 1px) !important;
+  padding-top: calc(.5em - 1px) !important;
+}

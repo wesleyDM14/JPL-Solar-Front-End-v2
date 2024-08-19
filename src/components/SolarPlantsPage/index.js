@@ -39,7 +39,7 @@ import { ThreeDots } from "react-loader-spinner";
 import { modalStyles, colors } from "../globalStyles";
 import SolarPlantsList from "./solarPlantList.js";
 
-const SolarPlantsPage = ({navigate}) => {
+const SolarPlantsPage = ({ navigate }) => {
 
     Modal.setAppElement(document.getElementById('root'));
     const { id } = useParams();
@@ -169,14 +169,15 @@ const SolarPlantsPage = ({navigate}) => {
                                                 type="number"
                                                 label="Potência do inversor (kWp)"
                                                 placeholder="Digite a potência do inversor"
+                                                onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                 icon={<FaBolt />}
                                                 width={350}
                                             />
                                             <TextInput
-                                                 name="panel"
-                                                 type="text"
-                                                 label="Marca dos Painéis Solares"
-                                                 placeholder="Digite a marca dos painéis solares"
+                                                name="panel"
+                                                type="text"
+                                                label="Marca dos Painéis Solares"
+                                                placeholder="Digite a marca dos painéis solares"
                                                 icon={<FaSolarPanel />}
                                                 width={350}
                                             />
@@ -185,6 +186,7 @@ const SolarPlantsPage = ({navigate}) => {
                                                 type="number"
                                                 label="Potência do Painel Solar (W)"
                                                 placeholder="Digite a potência do painel solar"
+                                                onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                 icon={<FaBolt />}
                                                 width={350}
                                             />
@@ -193,6 +195,7 @@ const SolarPlantsPage = ({navigate}) => {
                                                 type="number"
                                                 label="Quantidade de Painéis Instalado"
                                                 placeholder="Digite a quantidade de paineis instalado"
+                                                onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                 icon={<FaHashtag />}
                                                 width={350}
                                             />
@@ -201,6 +204,7 @@ const SolarPlantsPage = ({navigate}) => {
                                                 type="number"
                                                 label="Media de Geração Mensal (kWh)"
                                                 placeholder="Digite a média da geração Mensal"
+                                                onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                                                 icon={<FaHashtag />}
                                                 width={350}
                                             />
@@ -245,14 +249,14 @@ const SolarPlantsPage = ({navigate}) => {
             {
                 loading ? (
                     <LoadingContainer>
-                        <ThreeDots 
+                        <ThreeDots
                             color={colors.dark3}
                             height={80}
                             width={350}
                         />
                     </LoadingContainer>
                 ) : (
-                    <SolarPlantsList solarPlants={solarPlants} clientId={id} setLoading={setLoading} navigate={navigate}/>
+                    <SolarPlantsList solarPlants={solarPlants} clientId={id} setLoading={setLoading} navigate={navigate} />
                 )
             }
         </SolarPlantsContainer>

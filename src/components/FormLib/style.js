@@ -1,5 +1,36 @@
 import styled from 'styled-components';
 import { colors } from '../globalStyles.js';
+import ReactInputMask from 'react-input-mask';
+
+export const StyledInputMask = styled(ReactInputMask)`
+    max-width: 100%;
+    width: 90%;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+    align-items: center;
+    border: 1px solid #0a0a0a0d;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: calc(.75em - 1px);
+    padding-right: calc(.75em - 1px);
+    padding-top: calc(.5em - 1px);
+    line-height: 1.5;
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+`;
 
 export const Container = styled.div`
     position: relative;
@@ -68,4 +99,96 @@ export const StyledSelect = styled.select`
 
 export const StyledSelectContainer = styled.div`
     position: relative;
+`;
+
+export const SearchContainer = styled.div`
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+`;
+
+export const SearchIcon = styled.div`
+    margin: auto;
+    color: ${colors.dark1};
+    position: absolute;
+    font-size: 25px;
+    top: 40%;
+    left: 15px;
+`;
+
+export const SearchInput = styled.input`
+    width: 90%;
+    margin-top: 15px;
+    padding: 15px;
+    padding-left: 50px;
+`;
+
+export const FormTextInput = styled.input`
+    max-width: 100%;
+    width: 90%;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+    align-items: center;
+    border: 1px solid #0a0a0a0d;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: calc(.75em - 1px);
+    padding-right: calc(.75em - 1px);
+    padding-top: calc(.5em - 1px);
+    line-height: 1.5;
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+`;
+
+export const DatePickerContainer = styled.div`
+    max-width: 100%;
+    width: 90%;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+    align-items: center;
+    border: 1px solid #0a0a0a0d;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: calc(.75em - 1px);
+    padding-right: calc(.75em - 1px);
+    padding-top: calc(.5em - 1px);
+    line-height: 1.5;
+`;
+
+export const PaginationContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+`;
+
+export const PaginationButton = styled.button`
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:disabled{
+        background-color: #ddd;
+        cursor: not-allowed;
+    }
 `;

@@ -13,7 +13,7 @@ import {
     CloseContainer
 } from './style.js';
 import logo from '../../assets/logo.png';
-import { FaTimes, FaTachometerAlt, FaUser, FaPowerOff } from 'react-icons/fa';
+import { FaTimes, FaTachometerAlt, FaUser, FaPowerOff, FaFileAlt } from 'react-icons/fa';
 
 const Sidebar = ({ sidebarOpen, closeSidebar, logoultUser, navigate }) => {
     return (
@@ -28,6 +28,13 @@ const Sidebar = ({ sidebarOpen, closeSidebar, logoultUser, navigate }) => {
                 </CloseContainer>
             </TitleContainer>
             <MenuContainer>
+                <MenuTitleSection>ADMINISTRATIVO</MenuTitleSection>
+                <MenuItemContainer onClick={() => navigate('/contratos')}>
+                    <IconContainer>
+                        <FaFileAlt />
+                    </IconContainer>
+                    <MenuItemTitle>Contratos</MenuItemTitle>
+                </MenuItemContainer>
                 <MenuTitleSection>PESSOAL</MenuTitleSection>
                 <MenuItemContainer onClick={() => navigate('/profile')}>
                     <IconContainer>
